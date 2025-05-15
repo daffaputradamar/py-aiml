@@ -1,0 +1,46 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+  <category>
+    <pattern>siapa penyanyi favoriteku ?</pattern>
+    <template>
+      <random>
+        <li>John Lennon</li>
+        <li>Freddie Mercury</li>
+        <li>Adele</li>
+        <li>Taylor Swift</li>
+        <li>Kurt Cobain</li>
+      </random>
+    </template>
+  </category>
+
+  <category>
+    <pattern>MY NAME IS *</pattern>
+    <template>
+      <think><set name="username"><star/></set></think>
+      Hello <get name="username"/>, nice to meet you!
+    </template>
+  </category>
+
+  <category>
+    <pattern>DO YOU KNOW ME</pattern>
+    <template>
+      Sure buddy, you are <get name="username"/>
+    </template>
+  </category>
+
+  <!-- Task 3: Use of <srai> to handle multiple phrasings -->
+  <category>
+    <pattern>WHO AM I JARVIS</pattern>
+    <template>
+      <srai>DO YOU KNOW ME</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>DO YOU KNOW ME JARVIS</pattern>
+    <template>
+      <srai>DO YOU KNOW ME</srai>
+    </template>
+  </category>
+
+</aiml>
